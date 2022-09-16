@@ -1,0 +1,18 @@
+$color-bg: #929290;
+$color-pink: #ff2e65;
+
+@mixin width-blocks() {
+  max-width: 1110px;
+  width: 100%;
+}
+
+@mixin text-size($fs, $fw, $lh) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+}
+
+@mixin indent-null {
+  margin: 0;
+  padding: 0;
+}

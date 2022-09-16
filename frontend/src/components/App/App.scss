@@ -1,5 +1,7 @@
+@import '../../utils/constants/constants.scss';
+
 .root {
-  background-color: #929290;
+  background-color: $color-bg;
   position: relative;
 }
 
@@ -7,15 +9,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  background-color: #929290;
+  align-items: center;
+  background-color: $color-bg;
   min-width: 300px;
   max-width: 1440px;
   margin: 0 auto;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  border: 1px solid #929290;
+  border: 1px solid black;
+  padding: 8px 0 0;
 }
 
 .button-hover:hover {
