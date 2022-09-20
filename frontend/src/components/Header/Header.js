@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import './Header.scss';
+import Navbar from './Navbar/Navbar';
+
 import logo from '../../images/Logo.svg';
 
 function Header() {
@@ -30,6 +32,7 @@ function Header() {
           <p className='header__phone'>8 800 333-36-62</p>
         </div>
       </div>
+      <Navbar />
     </section>
   );
 }

@@ -1,0 +1,47 @@
+@import '../../../utils/constants/constants.scss';
+
+.navbar {
+  @include space-between();
+  align-items: center;
+  width: 100%;
+  height: 42px;
+}
+
+.navbar__links {
+  @include indent-null();
+  list-style: none;
+  display: flex;
+
+  .navbar__item {
+    margin-right: 24px;
+    .navbar__link {
+      @include text-size(15px, 600, 18px);
+      color: #0e0c0d;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+  }
+}
+
+.navbar__link-auth {
+  @include text-size(16px, 700, 28px);
+  text-decoration: none;
+  color: #696f7a;
+}
+
+.navbar__basket {
+  @include text-size(16px, 600, 28px);
+  @include size-blocks(160px, 42px);
+  color: white;
+  background-color: $color-pink;
+  border-style: none;
+  border-radius: 6px;
+  margin-left: 30px;
+
+  .navbar__basket-counter {
+    margin-left: 11px;
+    padding-left: 18px;
+    border-left: 2px solid white;
+  }
+}

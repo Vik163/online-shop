@@ -1,0 +1,27 @@
+@import '../../../utils/constants/constants.scss';
+
+.products {
+  max-width: 1110px;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.products__homePage {
+  margin: 51px 0 64px;
+}
+
+.products__title {
+  @include text-size(30px, 700, 36px);
+  @include indent-null();
+  color: $color-pink;
+}
+
+.products__container {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(190px, 253px));
+  // grid-template-rows: repeat(auto-fit, 466px);
+  gap: 48px 34px;
+  margin: 26px 0 64px;
+}

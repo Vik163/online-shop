@@ -1,0 +1,24 @@
+@import '../../../utils/constants/constants.scss';
+
+.poster {
+  @include space-between();
+  align-items: center;
+  width: 100%;
+}
+
+.poster__image {
+  @include size-adapt-blocks(1110px, 409px);
+  margin: 28px 0 297px;
+  border-radius: 15px;
+  box-shadow: $shadow;
+
+  &:nth-child(1) {
+    @include size-adapt-blocks(144px, 376px);
+    border-radius: 0 15px 15px 0;
+  }
+
+  &:nth-child(3) {
+    @include size-adapt-blocks(144px, 376px);
+    border-radius: 15px 0 0 15px;
+  }
+}

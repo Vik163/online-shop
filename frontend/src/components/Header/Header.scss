@@ -1,14 +1,13 @@
 @import '../../utils/constants/constants.scss';
 
 .header {
-  @include width-blocks();
-  height: 113px;
-  border: 1px solid red;
+  @include size-adapt-blocks(1110px, 113px);
+  @include space-between();
+  flex-direction: column;
 }
 
 .header__info {
-  display: flex;
-  justify-content: space-between;
+  @include space-between();
 }
 
 .header__info-left-side {
@@ -19,8 +18,7 @@
   display: flex;
 
   .header__logo {
-    width: 64px;
-    height: 64px;
+    @include size-blocks(64px, 64px);
   }
 
   .header__title-container {
@@ -65,10 +63,10 @@
 
   .header__button {
     @include text-size(14px, 700, 28px);
+    @include size-blocks(180px, 100%);
     color: #696f7a;
-    width: 180px;
-    height: 100%;
     border: none;
+    padding: 0;
     border-radius: 28px;
     margin-right: 28px;
   }

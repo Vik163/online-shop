@@ -1,0 +1,59 @@
+@import '../../../../utils/constants/constants.scss';
+
+.product__card {
+  @include size-adapt-blocks(253px, 1fr);
+  position: relative;
+  display: grid;
+  grid-template-rows: 240px 1fr 76px 36px;
+}
+
+.product__image {
+  width: 240px;
+}
+
+.new {
+  @include text-size(14px, 500, 14px);
+  position: absolute;
+  top: 23px;
+  right: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 28px;
+  background-color: $color-pink;
+  border-radius: 14px;
+  color: white;
+}
+
+.product__name {
+  @include text-size(24px, 800, 28px);
+  margin: 18px 0;
+}
+
+.prodct__description {
+  @include text-size(13px, 500, 19px);
+  color: #686466;
+  margin: 0;
+}
+
+.product__price {
+  @include text-size(19px, 700, 22px);
+}
+
+.product__basket-container {
+  @include space-between();
+  align-items: center;
+  .product__basket {
+    @include text-size(14px, 700, 28px);
+    @include size-adapt-blocks(126px, 36px);
+    text-decoration: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-style: none;
+    background-color: $color-pink;
+  }
+}

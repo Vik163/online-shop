@@ -1,0 +1,31 @@
+@import '../../../utils/constants/constants.scss';
+
+.newProducts {
+  @include size-adapt-blocks(1110px, 161px);
+  position: relative;
+  flex-direction: column;
+}
+
+.newProducts__title {
+  @include indent-null();
+  @include text-size(24px, 700, 29px);
+}
+
+.newProducts__container {
+  position: absolute;
+  display: flex;
+  padding: 0;
+  margin-top: 33px;
+  width: 100%;
+  z-index: 1;
+}
+
+.newProducts__onion {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 58px;
+  height: 191px;
+  transform: rotate(-20deg);
+  z-index: 0;
+}

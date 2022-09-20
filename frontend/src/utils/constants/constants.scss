@@ -1,9 +1,18 @@
 $color-bg: #929290;
-$color-pink: #ff2e65;
+// $color-bg: white;
 
-@mixin width-blocks() {
-  max-width: 1110px;
+$color-pink: #ff2e65;
+$shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);
+
+@mixin size-adapt-blocks($mw, $h) {
+  max-width: $mw;
   width: 100%;
+  height: $h;
+}
+
+@mixin size-blocks($w, $h) {
+  width: $w;
+  height: $h;
 }
 
 @mixin text-size($fs, $fw, $lh) {
@@ -15,4 +24,16 @@ $color-pink: #ff2e65;
 @mixin indent-null {
   margin: 0;
   padding: 0;
+}
+
+@mixin space-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin rub($color) {
+  line-height: 15%;
+  width: 0.4em;
+  border-bottom: 1px solid $color;
+  display: inline-block;
 }
