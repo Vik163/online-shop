@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('panton-extrabold.woff2') format('woff2'),
-    url('panton-extrabold.woff') format('woff'),
-    url('Panton-ExtraBold.otf') format('opentype');
+  src: url('Panton-ExtraBold.woff2') format('woff2'),
+    url('Panton-ExtraBold.woff') format('woff'),
+    url('Panton-ExtraBold.ttf') format('truetype');
 }

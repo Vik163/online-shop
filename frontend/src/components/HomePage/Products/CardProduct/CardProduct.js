@@ -18,9 +18,7 @@ function CardProduct(props) {
         <p className='product__price'>
           от {card.price} <span className='prodct__rub'>P</span>
         </p>
-        <Link className='product__basket' to='#'>
-          В корзину
-        </Link>
+        <button className='product__basket'>В корзину</button>
       </div>
     </li>
   );

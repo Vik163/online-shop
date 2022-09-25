@@ -1,0 +1,58 @@
+@import '../../../utils/constants/constants.scss';
+
+.map {
+  @include flex-center();
+  width: 100%;
+  flex-direction: column;
+  background-color: #e3ecf5;
+}
+
+.map__title {
+  @include text-size(30px, 700, 36px);
+  color: $color-pink;
+  margin: 56px 0 63px;
+}
+
+.map__info {
+  list-style: none;
+  @include indent-null();
+  @include size-adapt-blocks(1110px, 132px);
+  @include flex-between();
+  .map__info-item {
+    position: relative;
+    box-sizing: border-box;
+    @include size-adapt-blocks(255px, 104px);
+    @include text-size(14px, 700, 22px);
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.03);
+    padding-top: 43px;
+    background-color: white;
+    &::before {
+      position: absolute;
+      content: '';
+      top: -28px;
+      left: calc((100% - 77px) / 2);
+      width: 77px;
+      height: 77px;
+      border-radius: 50%;
+      background-color: white;
+    }
+    .map__info-icon {
+      position: absolute;
+      top: -11px;
+      left: calc((100% - 44px) / 2);
+      width: 44px;
+      height: 44px;
+    }
+  }
+}
+
+.map__map {
+  @include size-adapt-blocks(1110px, 322px);
+  margin-bottom: 74px;
+  & > ymaps {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+}

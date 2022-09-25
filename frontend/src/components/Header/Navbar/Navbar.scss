@@ -1,7 +1,7 @@
 @import '../../../utils/constants/constants.scss';
 
 .navbar {
-  @include space-between();
+  @include flex-between();
   align-items: center;
   width: 100%;
   height: 42px;

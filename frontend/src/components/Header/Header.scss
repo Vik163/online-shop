@@ -2,12 +2,12 @@
 
 .header {
   @include size-adapt-blocks(1110px, 113px);
-  @include space-between();
+  @include flex-between();
   flex-direction: column;
 }
 
 .header__info {
-  @include space-between();
+  @include flex-between();
 }
 
 .header__info-left-side {

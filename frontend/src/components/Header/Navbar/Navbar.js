@@ -5,7 +5,7 @@ import './Navbar.scss';
 
 function Navbar() {
   return (
-    <section className='navbar'>
+    <nav className='navbar'>
       <ul className='navbar__links'>
         <li className='navbar__item'>
           <Link className='navbar__link' to='#'>
@@ -68,7 +68,7 @@ function Navbar() {
           </button>
         </Link>
       </div>
-    </section>
+    </nav>
   );
 }
 

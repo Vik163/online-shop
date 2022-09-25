@@ -3,6 +3,7 @@ $color-bg: #929290;
 
 $color-pink: #ff2e65;
 $shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);
+$cursor: pointer;
 
 @mixin size-adapt-blocks($mw, $h) {
   max-width: $mw;
@@ -26,9 +27,15 @@ $shadow: 0px 4px 24px rgba(0, 0, 0, 0.26);
   padding: 0;
 }
 
-@mixin space-between() {
+@mixin flex-between() {
   display: flex;
   justify-content: space-between;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin rub($color) {

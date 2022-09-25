@@ -3,8 +3,8 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('montserrat-extrabold.woff2') format('woff2'),
-    url('montserrat-extrabold.woff') format('woff'),
+  src: url('Montserrat-ExtraBold.woff2') format('woff2'),
+    url('Montserrat-ExtraBold.woff') format('woff'),
     url('Montserrat-ExtraBold.ttf') format('truetype');
 }
 
@@ -13,8 +13,8 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('montserrat-bold.woff2') format('woff2'),
-    url('montserrat-bold.woff') format('woff'),
+  src: url('Montserrat-Bold.woff2?v=3.19') format('woff2'),
+    url('Montserrat-Bold.woff?v=3.19') format('woff'),
     url('Montserrat-Bold.ttf') format('truetype');
 }
 
@@ -23,8 +23,8 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('montserrat-semibold.woff2') format('woff2'),
-    url('montserrat-semibold.woff') format('woff'),
+  src: url('Montserrat-SemiBold.woff2?v=3.19') format('woff2'),
+    url('Montserrat-SemiBold.woff?v=3.19') format('woff'),
     url('Montserrat-SemiBold.ttf') format('truetype');
 }
 
@@ -33,7 +33,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('montserrat-medium.woff2?v=3.19') format('woff2'),
-    url('montserrat-medium.woff?v=3.19') format('woff'),
+  src: url('Montserrat-Medium.woff2?v=3.19') format('woff2'),
+    url('Montserrat-Medium.woff?v=3.19') format('woff'),
     url('Montserrat-Medium.ttf') format('truetype');
 }

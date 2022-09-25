@@ -13,12 +13,11 @@
 
 .new {
   @include text-size(14px, 500, 14px);
+  @include flex-center();
   position: absolute;
   top: 23px;
   right: 10px;
   display: none;
-  justify-content: center;
-  align-items: center;
   width: 60px;
   height: 28px;
   background-color: $color-pink;
@@ -42,16 +41,14 @@
 }
 
 .product__basket-container {
-  @include space-between();
+  @include flex-between();
   align-items: center;
   .product__basket {
     @include text-size(14px, 700, 28px);
     @include size-adapt-blocks(126px, 36px);
+    @include flex-center();
     text-decoration: none;
     border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
     border-style: none;
     background-color: $color-pink;

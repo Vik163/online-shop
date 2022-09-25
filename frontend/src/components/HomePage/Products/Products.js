@@ -1,5 +1,4 @@
 import React from 'react';
-import Parser from 'html-react-parser';
 
 import './Products.scss';
 import CardProduct from './CardProduct/CardProduct';
