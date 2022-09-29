@@ -1,42 +1,116 @@
 @import '../../utils/constants/constants.scss';
 
 .header {
-  @include size-adapt-blocks(1110px, 113px);
+  @include size-blocks(77%, auto);
   @include flex-between();
   flex-direction: column;
 }
 
+@media (max-width: 1200px) {
+  .header {
+    width: 85%;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    @include flex-center();
+  }
+
+  .header__shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 53%);
+    background-color: rgb(0, 0, 0, 0.9);
+    max-width: 500px;
+    height: 200vh;
+    z-index: 4;
+  }
+}
+
 .header__info {
+  position: relative;
   @include flex-between();
+}
+
+@media (max-width: 700px) {
+  .header__info {
+    flex-direction: column;
+  }
+}
+
+.header__menu-icon {
+  display: none;
+  position: absolute;
+  width: 28px;
+  top: 19px;
+  right: 0;
+  cursor: pointer;
+  z-index: 7;
+}
+
+@media (max-width: 1100px) {
+  .header__menu-icon {
+    display: block;
+  }
 }
 
 .header__info-left-side {
   display: flex;
 }
 
+@media (max-width: 1100px) {
+  .header__info-left-side {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .header__info-left-side {
+    flex-direction: column;
+  }
+}
+
 .header__logo-container {
   display: flex;
+}
 
+.header__logo {
+  @include size-blocks(64px, 64px);
+}
+
+.header__title-container {
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__title {
+  @include text-size(39px, 800, 45px);
+  @include indent-null();
+  letter-spacing: -1%;
+  font-family: 'Panton';
+}
+
+.header__subtitle {
+  @include text-size(10px, 600, 11px);
+  @include indent-null();
+  letter-spacing: -1.5%;
+}
+
+@media (max-width: 700px) {
+  .header__logo-container {
+    margin: 15px 70px 0 0;
+  }
   .header__logo {
-    @include size-blocks(64px, 64px);
+    @include size-blocks(44px, 44px);
   }
 
-  .header__title-container {
-    margin-left: 14px;
-    display: flex;
-    flex-direction: column;
-    .header__title {
-      @include text-size(39px, 800, 45px);
-      @include indent-null();
-      letter-spacing: -1%;
-      font-family: 'Panton';
-    }
-
-    .header__subtitle {
-      @include text-size(10px, 600, 11px);
-      @include indent-null();
-      letter-spacing: -1.5%;
-    }
+  .header__title {
+    @include text-size(30px, 800, 34px);
   }
 }
 
@@ -46,13 +120,47 @@
   margin: 5px 0 0 80px;
 }
 
+@media (max-width: 1300px) {
+  .header__town {
+    @include text-size(16px, 600, 22px);
+    margin: 5px 0 0 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header__town {
+    @include text-size(14px, 600, 22px);
+    margin: 5px 0 0 40px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .header__town {
+    margin: 20px 20px 0 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header__town {
+    margin: 20px 0 0;
+    text-align: center;
+  }
+}
+
 .header__town-time-delivery {
   @include text-size(14px, 600, 17px);
   margin-top: 5px;
 }
 
+@media (max-width: 1200px) {
+  .header__town-time-delivery {
+    @include text-size(12px, 600, 17px);
+  }
+}
+
 .header__town-color-pink {
   color: $color-pink;
+  cursor: pointer;
 }
 
 .header__info-right-side {
@@ -60,20 +168,54 @@
   align-items: center;
   height: 42px;
   margin-top: 6px;
+}
 
-  .header__button {
-    @include text-size(14px, 700, 28px);
-    @include size-blocks(180px, 100%);
-    color: #696f7a;
-    border: none;
-    padding: 0;
-    border-radius: 28px;
-    margin-right: 28px;
+@media (max-width: 700px) {
+  .header__info-right-side {
+    flex-direction: column;
+    margin: 30px 0 80px;
   }
+}
 
+.header__button {
+  @include text-size(14px, 700, 28px);
+  @include size-blocks(180px, 100%);
+  color: #696f7a;
+  border: none;
+  padding: 0;
+  border-radius: 28px;
+  margin-right: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .header__button {
+    @include size-blocks(170px, 100%);
+  }
+}
+
+@media (max-width: 1100px) {
+  .header__button {
+    @include size-blocks(140px, 70%);
+    @include text-size(12px, 700, 26px);
+    margin-right: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header__button {
+    margin: 0 0 5px;
+  }
+}
+
+.header__phone {
+  @include text-size(26px, 700, 32px);
+  @include indent-null();
+  color: $color-pink;
+}
+
+@media (max-width: 1200px) {
   .header__phone {
-    @include text-size(26px, 700, 32px);
-    @include indent-null();
-    color: $color-pink;
+    @include text-size(20px, 700, 30px);
   }
 }

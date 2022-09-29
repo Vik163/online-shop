@@ -7,10 +7,11 @@ import pizza1 from '../../../images/image10.png';
 import pizza2 from '../../../images/image9.png';
 import pizza3 from '../../../images/image11.png';
 import pizza4 from '../../../images/image12.png';
+import { whiteSpace } from '../../../utils/constants/constants';
 
 function Products(props) {
-  const m = <>&nbsp;</>;
-  const whiteSpace = m.props.children;
+  // const m = <>&nbsp;</>;
+  // const whiteSpace = m.props.children;
   const { title } = props;
   const cards = [
     {

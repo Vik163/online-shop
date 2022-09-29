@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Navbar.scss';
 
-function Navbar() {
+function Navbar(props) {
+  const { toggle, isMobile } = props;
+
+  const [styleOpenBlock, setStyleOpenBlock] = useState({});
+  console.log(styleOpenBlock);
+
+  useEffect(() => {
+    !isMobile
+      ? setStyleOpenBlock({ visibility: 'visible' })
+      : toggle
+      ? setStyleOpenBlock({ visibility: 'visible' })
+      : setStyleOpenBlock({ visibility: 'hidden' });
+  }, [toggle, isMobile]);
+
   return (
     <nav className='navbar'>
-      <ul className='navbar__links'>
+      <ul
+        className='navbar__links'
+        style={{ visibility: styleOpenBlock.visibility }}
+      >
         <li className='navbar__item'>
           <Link className='navbar__link' to='#'>
             Паста

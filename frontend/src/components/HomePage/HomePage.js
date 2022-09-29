@@ -16,12 +16,12 @@ function HomePage(props) {
     <div className='homePage'>
       <React.StrictMode>
         <Poster />
-        <NewProducts cards={cards} />
+        {/* <NewProducts cards={cards} />
         <Products cards={cards} title={title} />
-        <Action />
+        <Action /> */}
       </React.StrictMode>
 
-      <Map />
+      {/* <Map /> */}
     </div>
   );
 }
