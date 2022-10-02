@@ -16,8 +16,8 @@ function HomePage(props) {
     <div className='homePage'>
       <React.StrictMode>
         <Poster />
-        {/* <NewProducts cards={cards} />
-        <Products cards={cards} title={title} />
+        <NewProducts cards={cards} />
+        {/* <Products cards={cards} title={title} />
         <Action /> */}
       </React.StrictMode>
 

@@ -22,13 +22,13 @@
 
 .newProduct__text {
   @include text-size(18px, 700, 22px);
+}
 
-  .newProdct__price {
-    @include text-size(16px, 600, 20px);
-    color: $color-pink;
+.newProduct__price {
+  @include text-size(16px, 600, 20px);
+  color: $color-pink;
 
-    .newProdct__rub {
-      @include rub($color-pink);
-    }
+  .newProduct__rub {
+    @include rub($color-pink);
   }
 }

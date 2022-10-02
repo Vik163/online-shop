@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './CardNewProduct.scss';
+import './CardNewProductAdapt.scss';
 
 import newProductImage from '../../../../images/image8.png';
 
@@ -12,8 +13,8 @@ function Card() {
       <p className='newProduct__text'>
         Карбонара
         <br />
-        <span className='newProdct__price'>
-          от 120 <span className='newProdct__rub'>P</span>
+        <span className='newProduct__price'>
+          от 120 <span className='newProduct__rub'>P</span>
         </span>
       </p>
     </li>

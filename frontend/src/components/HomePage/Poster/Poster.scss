@@ -1,24 +1,50 @@
 @import '../../../utils/constants/constants.scss';
 
 .poster {
+  width: 100%;
   @include flex-between();
   align-items: center;
-  width: 100%;
+}
+
+.poster__homePage {
+  margin: 28px 0 297px;
 }
 
 .poster__image {
-  @include size-adapt-blocks(1110px, 409px);
-  margin: 28px 0 297px;
+  @include size-blocks(77%, auto);
+  margin: 0 1.5%;
   border-radius: 15px;
   box-shadow: $shadow;
-
   &:nth-child(1) {
-    @include size-adapt-blocks(144px, 376px);
+    width: 10%;
     border-radius: 0 15px 15px 0;
+    margin: 0;
+  }
+  &:nth-child(3) {
+    width: 10%;
+    border-radius: 15px 0 0 15px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .poster__homePage {
+    margin: 20px 0 87px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .poster__homePage {
+    margin: 20px 0 57px;
   }
 
-  &:nth-child(3) {
-    @include size-adapt-blocks(144px, 376px);
-    border-radius: 15px 0 0 15px;
+  .poster__image {
+    width: 97%;
+    &:nth-child(1) {
+      display: none;
+    }
+    &:nth-child(3) {
+      display: none;
+    }
   }
 }

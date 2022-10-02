@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './Footer.scss';
+import './FooterAdapt.scss';
 
 import logo from '../../images/Logo.svg';
 import viza from '../../images/viza.png';

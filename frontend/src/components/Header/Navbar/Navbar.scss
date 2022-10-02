@@ -8,36 +8,11 @@
   height: 42px;
 }
 
-@media (max-width: 700px) {
-  .navbar {
-    width: auto;
-    height: 0;
-  }
-}
-
 .navbar__links {
   width: 73%;
   @include indent-null();
   list-style: none;
   @include flex-between();
-}
-
-@media (max-width: 1100px) {
-  .navbar__links {
-    width: 100%;
-  }
-}
-
-@media (max-width: 700px) {
-  .navbar__links {
-    position: absolute;
-    top: -280px;
-    left: -150px;
-    width: 280px;
-    @include flex-center();
-    flex-direction: column;
-    z-index: 5;
-  }
 }
 
 .navbar__link {
@@ -48,52 +23,8 @@
   text-decoration: none;
 }
 
-@media (max-width: 1300px) {
-  .navbar__link {
-    @include text-size(14px, 600, 18px);
-  }
-}
-
-@media (max-width: 1100px) {
-  .navbar__link {
-    @include text-size(13px, 600, 18px);
-  }
-}
-
-@media (max-width: 700px) {
-  .navbar__link {
-    color: white;
-    letter-spacing: 1px;
-    &:focus {
-      border-bottom: 1px solid white;
-    }
-  }
-}
-
-@media (max-width: 700px) {
-  .navbar__item {
-    margin-top: 20px;
-  }
-}
-
 .navbar__basket-container {
   @include flex-center();
-}
-
-@media (max-width: 1100px) {
-  .navbar__basket-container {
-    position: absolute;
-    top: -44px;
-    right: 0;
-  }
-}
-
-@media (max-width: 700px) {
-  .navbar__basket-container {
-    top: -44px;
-    left: 0;
-    right: 0;
-  }
 }
 
 .navbar__link-auth {
@@ -101,24 +32,6 @@
   text-decoration: none;
   color: #696f7a;
   margin-right: 30px;
-}
-
-@media (max-width: 1300px) {
-  .navbar__link-auth {
-    margin-right: 20px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .navbar__link-auth {
-    @include text-size(14px, 700, 28px);
-  }
-}
-
-@media (max-width: 700px) {
-  .navbar__link-auth {
-    margin-right: 10px;
-  }
 }
 
 .navbar__basket {
@@ -133,19 +46,5 @@
     margin-left: 11px;
     padding-left: 18px;
     border-left: 2px solid white;
-  }
-}
-
-@media (max-width: 1300px) {
-  .navbar__basket {
-    @include text-size(15px, 600, 28px);
-    @include size-blocks(150px, 38px);
-  }
-}
-
-@media (max-width: 1100px) {
-  .navbar__basket {
-    @include text-size(13px, 600, 26px);
-    @include size-blocks(140px, 34px);
   }
 }

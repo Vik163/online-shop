@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import './Header.scss';
+import './HeaderAdapt.scss';
 import Navbar from './Navbar/Navbar';
 
 import logo from '../../images/Logo.svg';

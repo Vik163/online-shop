@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Navbar.scss';
+import './NavbarAdapt.scss';
 
 function Navbar(props) {
   const { toggle, isMobile } = props;
 
   const [styleOpenBlock, setStyleOpenBlock] = useState({});
-  console.log(styleOpenBlock);
 
   useEffect(() => {
     !isMobile

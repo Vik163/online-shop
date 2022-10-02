@@ -1,0 +1,90 @@
+@import '../../utils/constants/constants.scss';
+
+@media (max-width: 1300px) {
+  .header__town {
+    @include text-size(16px, 600, 22px);
+    margin: 5px 0 0 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    width: 85%;
+  }
+
+  .header__town {
+    @include text-size(14px, 600, 22px);
+    margin: 5px 0 0 40px;
+  }
+
+  .header__town-time-delivery {
+    @include text-size(12px, 600, 17px);
+  }
+
+  .header__button {
+    @include size-blocks(170px, 100%);
+  }
+
+  .header__phone {
+    @include text-size(20px, 700, 30px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .header__menu-icon {
+    display: block;
+  }
+
+  .header__info-left-side {
+    flex-direction: column;
+  }
+
+  .header__town {
+    margin: 20px 20px 0 30px;
+  }
+
+  .header__button {
+    @include size-blocks(140px, 70%);
+    @include text-size(12px, 700, 26px);
+    margin-right: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    @include flex-center();
+  }
+
+  .header__info {
+    flex-direction: column;
+  }
+
+  .header__info-left-side {
+    flex-direction: column;
+  }
+
+  .header__logo-container {
+    margin: 15px 70px 0 0;
+  }
+  .header__logo {
+    @include size-blocks(44px, 44px);
+  }
+
+  .header__title {
+    @include text-size(30px, 800, 34px);
+  }
+
+  .header__town {
+    margin: 20px 0 0;
+    text-align: center;
+  }
+
+  .header__info-right-side {
+    flex-direction: column;
+    margin: 30px 0 80px;
+  }
+
+  .header__button {
+    margin: 0 0 5px;
+  }
+}

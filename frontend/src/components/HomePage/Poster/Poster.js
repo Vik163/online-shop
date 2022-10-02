@@ -8,7 +8,7 @@ import rightImage from '../../../images/image6.png';
 
 function Poster() {
   return (
-    <section className='poster'>
+    <section className='poster poster__homePage'>
       <img className='poster__image' src={leftImage} alt='Картинка слева' />
       <img className='poster__image' src={centerImage} alt='афиша' />
       <img className='poster__image' src={rightImage} alt='Картинка справа' />

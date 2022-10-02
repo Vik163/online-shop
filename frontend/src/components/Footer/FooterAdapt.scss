@@ -1,0 +1,138 @@
+@import '../../utils/constants/constants.scss';
+
+@media (max-width: 1300px) {
+  .footer__image {
+    right: -25%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    width: 85%;
+  }
+
+  .footer__image {
+    right: -22%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer__logo-container {
+    margin: 46px 0 28px;
+  }
+
+  .footer__info {
+    grid-template-rows: fit-content(64px);
+    line-height: 22px;
+  }
+
+  .footer__phone {
+    @include text-size(28px, 700, 35px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    @include flex-center();
+    flex-direction: column;
+  }
+
+  .footer__blocks {
+    @include flex-center();
+    flex-direction: column;
+    padding-bottom: 0;
+    margin: 0;
+    width: 100%;
+    &:nth-of-type(2) {
+      margin: 0;
+      width: 100%;
+      padding-bottom: 80px;
+    }
+  }
+
+  .footer__logo-container {
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+  .footer__info {
+    justify-items: center;
+    gap: 20px 30px;
+  }
+
+  .footer__info-link {
+    text-align: center;
+  }
+
+  .footer__info-item {
+    grid-column: span 2;
+  }
+
+  .footer__social-title {
+    margin: 44px 0 0;
+  }
+
+  .footer__social-container {
+    top: 70px;
+    width: 80%;
+  }
+
+  .footer__phone {
+    margin-top: 10px;
+  }
+
+  .footer__image {
+    display: none;
+  }
+
+  .footer__year {
+    bottom: 20px;
+    text-align: center;
+  }
+
+  .footer__cards {
+    right: 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    width: 100%;
+  }
+
+  .footer__blocks:nth-of-type(2) {
+    padding-bottom: 120px;
+  }
+
+  .footer__logo-container {
+    margin: 30px;
+  }
+
+  .footer__info {
+    gap: 15px;
+  }
+
+  .footer__social-title {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .footer__social-container {
+    gap: 14px 16px;
+    width: 260px;
+    grid-template-columns: repeat(4, 52px);
+    grid-template-rows: repeat(2, 52px);
+  }
+
+  .footer__cards {
+    width: 120px;
+    top: -48px;
+    padding: 0;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    .footer__card {
+      @include size-blocks(30px, 30px);
+    }
+  }
+}
