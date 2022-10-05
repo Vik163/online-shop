@@ -35,7 +35,7 @@ function Map() {
         iconCaption: 'Наш магазин',
       },
       {
-        preset: 'islands#redDotIcon',
+        preset: 'islands#redDotIcon', // метка
       }
     );
     myMap.geoObjects.add(myPlacemark);

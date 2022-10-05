@@ -13,7 +13,11 @@ function CardProduct(props) {
         NEW
       </div>
       <h2 className='product__name'>{card.name}</h2>
-      <p className='prodct__description'>{card.description}</p>
+      <article className='product__description'>
+        <p className='product__description-text'>{card.description}</p>
+        <span className='product__description-hint'>{card.description}</span>
+      </article>
+
       <div className='product__basket-container'>
         <p className='product__price'>
           от {card.price} <span className='prodct__rub'>P</span>

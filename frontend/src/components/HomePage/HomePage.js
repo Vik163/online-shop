@@ -17,11 +17,11 @@ function HomePage(props) {
       <React.StrictMode>
         <Poster />
         <NewProducts cards={cards} />
-        {/* <Products cards={cards} title={title} />
-        <Action /> */}
+        <Products cards={cards} title={title} />
+        <Action />
       </React.StrictMode>
 
-      {/* <Map /> */}
+      <Map />
     </div>
   );
 }

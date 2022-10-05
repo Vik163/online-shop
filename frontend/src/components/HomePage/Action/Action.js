@@ -13,10 +13,10 @@ function Action() {
       </h2>
       <div className='action__container'>
         <img className='action__image-main' src={actionMain} alt='акции' />
-        <img className='action__image-actions' src={actions} alt='акции' />
-        <img className='action__image-actions' src={actions} alt='акции' />
-        <img className='action__image-actions' src={actions} alt='акции' />
-        <img className='action__image-actions' src={actions} alt='акции' />
+        <img className='action__image' src={actions} alt='акции' />
+        <img className='action__image' src={actions} alt='акции' />
+        <img className='action__image' src={actions} alt='акции' />
+        <img className='action__image' src={actions} alt='акции' />
       </div>
       <button className='action__button'>Все акции</button>
     </div>

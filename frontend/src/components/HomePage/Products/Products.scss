@@ -1,8 +1,9 @@
 @import '../../../utils/constants/constants.scss';
 
 .products {
-  max-width: 1110px;
-  width: 100%;
+  width: 77%;
+  @include flex-center();
+  flex-direction: column;
 }
 
 .products__homePage {
@@ -12,6 +13,7 @@
 .products__title {
   @include text-size(30px, 700, 36px);
   @include indent-null();
+  align-self: flex-start;
   color: $color-pink;
 }
 
@@ -19,8 +21,47 @@
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(190px, 253px));
-  // grid-template-rows: repeat(auto-fit, 466px);
+  grid-template-columns: repeat(4, minmax(100px, 253px));
   gap: 48px 34px;
-  margin: 26px 0 64px;
+  margin: 26px 0 0;
+}
+
+@media (max-width: 1000px) {
+  .products {
+    width: 570px;
+  }
+
+  .products__homePage {
+    margin: 51px 0 40px;
+  }
+
+  .products__container {
+    grid-template-columns: repeat(3, 170px);
+    gap: 30px;
+    margin: 26px 0 0;
+  }
+
+  .products__title {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .products {
+    width: 370px;
+  }
+  .products__container {
+    grid-template-columns: repeat(2, 170px);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .products {
+    width: 260px;
+  }
+
+  .products__container {
+    grid-template-columns: 170px;
+  }
 }

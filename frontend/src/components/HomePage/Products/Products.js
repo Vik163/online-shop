@@ -17,7 +17,7 @@ function Products(props) {
     {
       image: pizza1,
       name: 'Карбонара',
-      description: `Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное${whiteSpace}масло, черный перец, пармезан.350 г`,
+      description: `Домашнаяя паста феттуччине, сливочный соус, креветки, трюфельное${whiteSpace}масло, черный перец, dfgdfgdfgdfgsdfgdfgdf fdfgdfgsdfg пармезан.350 г`,
       price: '120',
     },
     {
