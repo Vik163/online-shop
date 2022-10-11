@@ -42,8 +42,7 @@
 
 @media (max-width: 700px) {
   .navbar {
-    width: auto;
-    height: 0;
+    @include size-blocks(auto, 0);
   }
 
   .navbar__links {

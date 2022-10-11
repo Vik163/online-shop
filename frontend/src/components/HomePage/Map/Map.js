@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Map.scss';
+import './MapAdapt.scss';
 
 import map_1 from '../../../images/map_1.svg';
 import map_2 from '../../../images/map_2.svg';

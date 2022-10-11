@@ -1,7 +1,7 @@
 @import '../../../utils/constants/constants.scss';
 
 .action {
-  width: 77%;
+  width: $width-main-blocks;
   @include flex-between();
   flex-direction: column;
   align-items: center;
@@ -37,8 +37,7 @@
 
 .action__button {
   @include text-size(14px, 700, 28px);
-  width: 160px;
-  height: 48px;
+  @include size-blocks(160px, 48px);
   margin-bottom: 62px;
   border: none;
   border-radius: 23px;
@@ -81,8 +80,7 @@
 
   .action__button {
     @include text-size(12px, 700, 24px);
-    width: 130px;
-    height: 40px;
+    @include size-blocks(130px, 40px);
     margin-bottom: 35px;
     border-radius: 20px;
   }

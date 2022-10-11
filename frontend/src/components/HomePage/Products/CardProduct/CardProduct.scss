@@ -16,12 +16,11 @@
 .new {
   @include text-size(14px, 500, 14px);
   @include flex-center();
+  @include size-blocks(60px, 28px);
   position: absolute;
   top: 23px;
   right: 10px;
   display: none;
-  width: 60px;
-  height: 28px;
   background-color: $color-pink;
   border-radius: 14px;
   color: white;

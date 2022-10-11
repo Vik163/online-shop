@@ -3,9 +3,8 @@
 .navbar {
   position: relative;
   @include flex-between();
+  @include size-blocks(100%, 42px);
   align-items: center;
-  width: 100%;
-  height: 42px;
 }
 
 .navbar__links {
@@ -18,8 +17,7 @@
 .navbar__link {
   @include text-size(15px, 600, 18px);
   color: #0e0c0d;
-  width: 100%;
-  height: 100%;
+  @include size-blocks(100%, 100%);
   text-decoration: none;
 }
 
@@ -42,7 +40,7 @@
   border-style: none;
   border-radius: 6px;
 
-  .navbar__basket-counter {
+  &-counter {
     margin-left: 11px;
     padding-left: 18px;
     border-left: 2px solid white;

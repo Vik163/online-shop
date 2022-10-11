@@ -2,7 +2,7 @@
 
 .footer {
   position: relative;
-  width: 77%;
+  width: $width-main-blocks;
   display: flex;
 }
 
@@ -51,7 +51,7 @@
   list-style: none;
   color: #0e0c0d;
 
-  .footer__info-link {
+  &-link {
     display: flex;
     align-self: center;
     text-decoration: none;

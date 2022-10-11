@@ -15,8 +15,7 @@
 }
 
 .newProduct__image {
-  width: 71px;
-  height: 71px;
+  @include size-blocks(71px, 71px);
   margin: 0 25px 0 17px;
 }
 

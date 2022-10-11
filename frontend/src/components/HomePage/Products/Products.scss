@@ -1,7 +1,7 @@
 @import '../../../utils/constants/constants.scss';
 
 .products {
-  width: 77%;
+  width: $width-main-blocks;
   @include flex-center();
   flex-direction: column;
 }

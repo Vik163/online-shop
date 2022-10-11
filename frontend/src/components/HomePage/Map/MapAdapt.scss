@@ -1,0 +1,77 @@
+@import '../../../utils/constants/constants.scss';
+
+@media (max-width: 1300px) {
+  .map__info-item {
+    @include text-size(13px, 700, 20px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .map__title {
+    margin: 45px 0 50px;
+  }
+
+  .map__info-item {
+    @include text-size(11px, 700, 18px);
+    padding-top: 32px;
+  }
+
+  .map__map {
+    height: 280px;
+    margin: 25px 0 40px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .map__title {
+    margin: 40px 0 45px;
+  }
+
+  .map__info-item {
+    @include text-size(10px, 700, 15px);
+    padding-top: 22px;
+    &:before {
+      top: -20%;
+      height: 50%;
+    }
+  }
+
+  .map__map {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .map__title {
+    @include text-size(22px, 700, 28px);
+    margin: 30px 0;
+  }
+  .map__info {
+    @include size-blocks(260px, auto);
+    flex-wrap: wrap;
+  }
+
+  .map__info-item {
+    @include size-blocks(120px, auto);
+    margin-bottom: 30px;
+    &:before {
+      height: 40%;
+      top: -15%;
+    }
+
+    .map__info-icon {
+      height: 35%;
+    }
+  }
+
+  .map__map {
+    height: 140px;
+    margin: 0 0 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .map__map {
+    width: 80%;
+  }
+}

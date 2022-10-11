@@ -1,7 +1,7 @@
 @import '../../utils/constants/constants.scss';
 
 .header {
-  @include size-blocks(77%, auto);
+  @include size-blocks($width-main-blocks, auto);
   @include flex-between();
   flex-direction: column;
 }
