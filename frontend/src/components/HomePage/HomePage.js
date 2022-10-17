@@ -13,14 +13,12 @@ function HomePage(props) {
   const { cards } = props;
 
   return (
-    <div className='homePage'>
+    <div className='home-page'>
       <React.StrictMode>
-        <Poster />
-        <NewProducts cards={cards} />
+        <Poster /> <NewProducts cards={cards} />
         <Products cards={cards} title={title} />
         <Action />
       </React.StrictMode>
-
       <Map />
     </div>
   );

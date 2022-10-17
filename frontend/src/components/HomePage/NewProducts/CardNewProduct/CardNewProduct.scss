@@ -1,7 +1,8 @@
 @import '../../../../utils/constants/constants.scss';
 
-.newProduct__card {
-  @include size-adapt-blocks(255px, 99px);
+.new-product__card {
+  min-width: 251px;
+  height: 99px;
   background-color: white;
   display: flex;
   align-items: center;
@@ -14,20 +15,20 @@
   }
 }
 
-.newProduct__image {
+.new-product__image {
   @include size-blocks(71px, 71px);
   margin: 0 25px 0 17px;
 }
 
-.newProduct__text {
+.new-product__text {
   @include text-size(18px, 700, 22px);
 }
 
-.newProduct__price {
+.new-product__price {
   @include text-size(16px, 600, 20px);
   color: $color-pink;
 
-  .newProduct__rub {
+  .new-product__rub {
     @include rub($color-pink);
   }
 }

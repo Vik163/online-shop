@@ -9,13 +9,12 @@ import Footer from '../Footer/Footer';
 
 function App() {
   const [cards, setCards] = useState([]);
-  console.log(cards);
+  // console.log(cards);
 
   useEffect(() => {
     api
       .getInitialCards()
       .then((cards) => {
-        console.log(cards);
         setCards(cards);
       })
       .catch((err) => {});

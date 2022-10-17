@@ -1,34 +1,43 @@
 @import '../../../../utils/constants/constants.scss';
 
 @media (max-width: 1300px) {
-  .newProduct__text {
+  .new-product__card {
+    min-width: 217px;
+    height: 79px;
+    margin-right: 34px;
+  }
+
+  .new-product__text {
     @include text-size(16px, 700, 22px);
   }
 
-  .newProduct__price {
+  .new-product__price {
     @include text-size(15px, 600, 20px);
   }
 
-  .newProduct__image {
+  .new-product__image {
     @include size-blocks(60px, 60px);
     margin: 0 20px 0 19px;
   }
 }
 
 @media (max-width: 1200px) {
-  .newProduct__card {
-    @include size-adapt-blocks(200px, 79px);
-    margin-right: 20px;
+  .new-product__card {
+    min-width: 200px;
   }
 
-  .newProduct__image {
+  .new-product__image {
     @include size-blocks(55px, 55px);
     margin: 0 20px 0 14px;
   }
 }
 
 @media (max-width: 1100px) {
-  .newProduct__image {
+  .new-product__card {
+    min-width: 168px;
+  }
+
+  .new-product__image {
     @include size-blocks(50px, 50px);
     margin: 0 15px 0 14px;
   }

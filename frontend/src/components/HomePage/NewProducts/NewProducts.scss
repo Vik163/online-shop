@@ -1,25 +1,65 @@
 @import '../../../utils/constants/constants.scss';
 
-.newProducts {
+.new-products {
   @include size-blocks($width-main-blocks, 161px);
   position: relative;
 }
+.new-products::after {
+  content: '';
+  top: 0;
+  right: -15%;
+  bottom: 0;
+  width: 10%;
+  position: absolute;
+  z-index: 3;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(144, 144, 144, 0.8)
+  );
+}
 
-.newProducts__title {
+.new-products::before {
+  content: '';
+  top: 0;
+  left: -15%;
+  bottom: 0;
+  width: 10%;
+  position: absolute;
+  z-index: 8;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    rgba(144, 144, 144, 0.8)
+  );
+}
+
+.new-products__title {
   @include indent-null();
   @include text-size(24px, 700, 29px);
 }
 
-.newProducts__container {
+.new-products__container {
   position: absolute;
-  @include flex-between();
-  padding: 0;
-  margin-top: 33px;
-  width: 100%;
+  top: 53px;
+  left: -15%;
   z-index: 1;
+  width: 130%;
+  height: 120px;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
-.newProducts__onion {
+.new-products__container-drag {
+  @include flex-between();
+  padding: 0;
+  margin: 0 0 0 11.5%;
+}
+
+.new-products__onion {
   position: absolute;
   top: 0;
   left: -40px;
@@ -29,45 +69,45 @@
 }
 
 @media (max-width: 1100px) {
-  .newProducts__container {
+  .new-products__container {
     margin-top: 20px;
   }
 }
 
 @media (max-width: 1000px) {
-  .newProducts {
+  .new-products {
     @include size-blocks(360px, 210px);
   }
 
-  .newProducts__container {
+  .new-products__container {
     width: 100%;
     flex-wrap: wrap;
   }
 
-  .newProducts__title {
+  .new-products__title {
     text-align: center;
   }
 
-  .newProducts__onion {
+  .new-products__onion {
     @include size-blocks(50px, 160px);
   }
 }
 
 @media (max-width: 600px) {
-  .newProducts {
+  .new-products {
     @include size-blocks(170px, 362px);
   }
 
-  .newProducts__container {
+  .new-products__container {
     margin-top: 15px;
     flex-direction: column;
   }
 
-  .newProducts__title {
+  .new-products__title {
     text-align: center;
   }
 
-  .newProducts__onion {
+  .new-products__onion {
     @include size-blocks(40px, 130px);
     left: -30px;
   }

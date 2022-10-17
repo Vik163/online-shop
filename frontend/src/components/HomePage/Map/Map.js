@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Map.scss';
 import './MapAdapt.scss';
@@ -9,6 +9,7 @@ import map_3 from '../../../images/map_3.svg';
 import map_4 from '../../../images/map_4.svg';
 
 function Map() {
+  const [isMap, setIsMap] = useState(false);
   const loadScript = (src, onLoad) => {
     const script = document.createElement('script');
 
@@ -41,9 +42,14 @@ function Map() {
     );
     myMap.geoObjects.add(myPlacemark);
   };
-  loadScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU', () => {
-    window.ymaps.ready(init);
-  });
+
+  if (!isMap) {
+    setIsMap(true);
+
+    loadScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU', () => {
+      window.ymaps.ready(init);
+    });
+  }
 
   return (
     <section className='map'>
