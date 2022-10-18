@@ -10,12 +10,12 @@ import Map from './Map/Map';
 
 function HomePage(props) {
   const [title, setTitle] = useState('Паста');
-  const { cards } = props;
+  const { cards, newCards } = props;
 
   return (
     <div className='home-page'>
       <React.StrictMode>
-        <Poster /> <NewProducts cards={cards} />
+        <Poster /> <NewProducts cards={cards} newCards={newCards} />
         <Products cards={cards} title={title} />
         <Action />
       </React.StrictMode>
