@@ -9,9 +9,11 @@ function CardProduct(props) {
   return (
     <li className='product__card'>
       <img className='product__image' src={card.image} alt='продукт' />
-      <div className='new' style={{ display: `${newProduct}` }}>
-        NEW
-      </div>
+      {card.newProduct && (
+        <div className='new' style={{ display: `${newProduct}` }}>
+          NEW
+        </div>
+      )}
       <h2 className='product__name'>{card.name}</h2>
       <article className='product__description'>
         <p className='product__description-text'>{card.description}</p>
