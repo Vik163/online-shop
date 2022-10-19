@@ -8,18 +8,57 @@ import onion from '../../../images/onion.png';
 function NewProducts(props) {
   const { newCards } = props;
   const ref = useRef();
-  const widthItem = 281; // Элемент контейнера
-  const widthParentContainer = 1110; // Контейнер элементов
-  // Родительский контейнер
-  const widthContainer = newCards.length * widthItem - 30;
-  //Максимальный сдвиг влево
-  const maxShiftLeft = widthContainer - widthParentContainer;
 
   const [state, setState] = useState({
     isSliding: false,
     clientX: 0,
     scrollX: 0,
   });
+  const [isDesktop, setIsDesktop] = useState(
+    window.matchMedia('(max-width: 1300px)').matches
+  );
+  const [isBook, setIsBook] = useState(
+    window.matchMedia('(max-width: 1100px)').matches
+  );
+  const [isPad, setIsPad] = useState(
+    window.matchMedia('(max-width: 1000px)').matches
+  );
+
+  const widthParentContainer =
+    (isPad && 578) || (isBook && 774) || (isDesktop && 972) || 1110; // Контейнер элементов
+
+  const widthItem = (isBook && 202) || (isDesktop && 247) || 281; // Элемент контейнера
+  console.log(widthItem);
+  // Родительский контейнер
+  const widthContainer = newCards.length * widthItem - 30;
+  //Максимальный сдвиг влево
+  const maxShiftLeft = widthContainer - widthParentContainer;
+
+  useEffect(() => {
+    const handler = (e) => setIsDesktop(e.matches);
+    const handlerBook = (e) => setIsBook(e.matches);
+    const handlerPad = (e) => setIsPad(e.matches);
+    window
+      .matchMedia('(max-width: 1300px)')
+      .addEventListener('change', handler);
+    window
+      .matchMedia('(max-width: 1100px)')
+      .addEventListener('change', handlerBook);
+    window
+      .matchMedia('(max-width: 1000px)')
+      .addEventListener('change', handlerPad);
+    return () => {
+      window
+        .matchMedia('(max-width: 1300px)')
+        .removeEventListener('change', handler);
+      window
+        .matchMedia('(max-width: 1100px)')
+        .removeEventListener('change', handlerBook);
+      window
+        .matchMedia('(max-width: 1000px)')
+        .removeEventListener('change', handlerPad);
+    };
+  }, []);
 
   const onMouseMove = (e) => {
     e.preventDefault();
@@ -28,6 +67,7 @@ function NewProducts(props) {
     const sX = Math.floor(Math.abs(scrollX - e.clientX + clientX));
     const cX = e.clientX;
 
+    // console.log(isSliding);
     if (isSliding) {
       if (scrollX > maxShiftLeft) {
         //не дает сдвигаться больше максимума
@@ -79,6 +119,8 @@ function NewProducts(props) {
     const { scrollX } = state;
     const remains = scrollX % widthItem;
     if (remains < widthItem / 2) {
+      // console.log('y');
+
       // сдвиг влево остаток меньше половины
       ref.current.scrollLeft = scrollX - timePassed / 3;
       setState({

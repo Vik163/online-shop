@@ -76,12 +76,11 @@
 
 @media (max-width: 1000px) {
   .new-products {
-    @include size-blocks(360px, 210px);
+    @include size-blocks(77%, 141px);
   }
 
   .new-products__container {
-    width: 100%;
-    flex-wrap: wrap;
+    top: 33px;
   }
 
   .new-products__title {
@@ -89,18 +88,18 @@
   }
 
   .new-products__onion {
-    @include size-blocks(50px, 160px);
+    @include size-blocks(45px, 150px);
+    left: -30px;
   }
 }
 
 @media (max-width: 600px) {
   .new-products {
-    @include size-blocks(170px, 362px);
+    @include size-blocks(170px, 141px);
   }
 
   .new-products__container {
     margin-top: 15px;
-    flex-direction: column;
   }
 
   .new-products__title {
@@ -109,6 +108,7 @@
 
   .new-products__onion {
     @include size-blocks(40px, 130px);
-    left: -30px;
+    left: 0;
+    top: 10px;
   }
 }
