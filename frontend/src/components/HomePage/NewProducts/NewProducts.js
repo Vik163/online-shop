@@ -23,12 +23,19 @@ function NewProducts(props) {
   const [isPad, setIsPad] = useState(
     window.matchMedia('(max-width: 1000px)').matches
   );
+  const [isMobile, setIsMobile] = useState(
+    window.matchMedia('(max-width: 600px)').matches
+  );
 
   const widthParentContainer =
-    (isPad && 578) || (isBook && 774) || (isDesktop && 972) || 1110; // Контейнер элементов
+    (isMobile && 170) ||
+    (isPad && 578) ||
+    (isBook && 774) ||
+    (isDesktop && 972) ||
+    1110; // Контейнер элементов
 
-  const widthItem = (isBook && 202) || (isDesktop && 247) || 281; // Элемент контейнера
-  console.log(widthItem);
+  const widthItem =
+    (isMobile && 190) || (isBook && 202) || (isDesktop && 247) || 281; // Элемент контейнера
   // Родительский контейнер
   const widthContainer = newCards.length * widthItem - 30;
   //Максимальный сдвиг влево
@@ -38,6 +45,7 @@ function NewProducts(props) {
     const handler = (e) => setIsDesktop(e.matches);
     const handlerBook = (e) => setIsBook(e.matches);
     const handlerPad = (e) => setIsPad(e.matches);
+    const handlerMobile = (e) => setIsMobile(e.matches);
     window
       .matchMedia('(max-width: 1300px)')
       .addEventListener('change', handler);
@@ -47,6 +55,9 @@ function NewProducts(props) {
     window
       .matchMedia('(max-width: 1000px)')
       .addEventListener('change', handlerPad);
+    window
+      .matchMedia('(max-width: 600px)')
+      .addEventListener('change', handlerMobile);
     return () => {
       window
         .matchMedia('(max-width: 1300px)')
@@ -57,15 +68,25 @@ function NewProducts(props) {
       window
         .matchMedia('(max-width: 1000px)')
         .removeEventListener('change', handlerPad);
+      window
+        .matchMedia('(max-width: 600px)')
+        .removeEventListener('change', handlerMobile);
     };
   }, []);
 
-  const onMouseMove = (e) => {
-    e.preventDefault();
+  const startMove = (eClientX) => {
+    setState({
+      ...state,
+      isSliding: true,
+      clientX: eClientX,
+    });
+  };
+
+  const moved = (eClienX) => {
     const { isSliding, clientX, scrollX } = state;
     //делаю целое положительное число
-    const sX = Math.floor(Math.abs(scrollX - e.clientX + clientX));
-    const cX = e.clientX;
+    const sX = Math.floor(Math.abs(scrollX - eClienX + clientX));
+    const cX = eClienX;
 
     // console.log(isSliding);
     if (isSliding) {
@@ -85,6 +106,19 @@ function NewProducts(props) {
       }
     }
     ref.current.scrollLeft = scrollX;
+  };
+
+  const stopElements = () => {
+    const { scrollX } = state;
+
+    if (scrollX % widthItem === 0 || scrollX === 0 || scrollX === 1) {
+      setState({
+        ...state,
+        isSliding: false,
+      });
+    } else {
+      shiftSmoothElem();
+    }
   };
 
   // Плавный сдвиг после отпускания мышки ---------------------------
@@ -122,62 +156,45 @@ function NewProducts(props) {
       // console.log('y');
 
       // сдвиг влево остаток меньше половины
-      ref.current.scrollLeft = scrollX - timePassed / 3;
       setState({
         ...state,
         scrollX: scrollX - timePassed / 3,
         isSliding: false,
       });
+      ref.current.scrollLeft = scrollX - timePassed / 3;
     } else {
       // сдвиг вправо остаток больше половины
-      ref.current.scrollLeft = scrollX + timePassed / 3;
       setState({
         ...state,
         scrollX: scrollX + timePassed / 3,
         isSliding: false,
       });
+      ref.current.scrollLeft = scrollX + timePassed / 3;
     }
   }
   //--------------------------------------------------------------
 
   const onMouseUp = (e) => {
     e.preventDefault();
-    const { scrollX } = state;
-
-    if (scrollX % widthItem === 0 || scrollX === 0 || scrollX === 1) {
-      setState({
-        ...state,
-        isSliding: false,
-      });
-    } else {
-      shiftSmoothElem();
-    }
+    stopElements();
   };
 
   const onMouseLeave = (e) => {
     e.preventDefault();
-
-    const { scrollX } = state;
-    if (scrollX % widthItem === 0 || scrollX === 0 || scrollX === 1) {
-      setState({
-        ...state,
-        isSliding: false,
-      });
-    } else {
-      shiftSmoothElem();
-    }
+    stopElements();
   };
 
   const onMouseDown = (e) => {
     e.preventDefault();
-
-    setState({
-      ...state,
-      isSliding: true,
-      clientX: e.clientX,
-    });
+    startMove(e.clientX);
   };
 
+  const onMouseMove = (e) => {
+    e.preventDefault();
+    moved(e.clientX);
+  };
+
+  //Прокрутка колёсиком мыши
   useEffect(() => {
     const elem = ref.current;
     if (elem) {
@@ -193,12 +210,29 @@ function NewProducts(props) {
     }
   }, []);
 
+  // Мобильный -----------------------------
+  const onTouchStart = (e) => {
+    startMove(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    moved(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = (e) => {
+    stopElements(e);
+  };
+  //---------------------------------------
+
   return (
     <section className='new-products'>
       <h2 className='new-products__title'>Новинки</h2>
       <div
         className='new-products__container'
         ref={ref}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
         onMouseMove={onMouseMove}

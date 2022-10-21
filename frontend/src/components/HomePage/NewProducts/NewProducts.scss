@@ -4,6 +4,7 @@
   @include size-blocks($width-main-blocks, 161px);
   position: relative;
 }
+
 .new-products::after {
   content: '';
   top: 0;
@@ -97,9 +98,21 @@
   .new-products {
     @include size-blocks(170px, 141px);
   }
+  .new-products::after {
+    right: -75px;
+  }
+  .new-products:before {
+    left: -75px;
+  }
 
   .new-products__container {
+    width: 318px;
     margin-top: 15px;
+    left: -74px;
+  }
+
+  .new-products__container-drag {
+    margin-left: 77px;
   }
 
   .new-products__title {
@@ -108,7 +121,7 @@
 
   .new-products__onion {
     @include size-blocks(40px, 130px);
-    left: 0;
+    left: -30px;
     top: 10px;
   }
 }
