@@ -1,11 +1,9 @@
 const Card = require('../models/store');
 
 module.exports.getCards = (req, res, next) => {
-  console.log('i');
   Card.find()
     .then((cards) => {
       res.send(cards);
-      console.log(cards);
     })
     .catch((err) => next(err));
 };

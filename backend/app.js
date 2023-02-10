@@ -10,9 +10,9 @@ const index = require('./routes/index');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public/images_pizza')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public/images_pizza')));
 
 mongoose.connect('mongodb://localhost:27017/storedb', {
   useNewUrlParser: true,
